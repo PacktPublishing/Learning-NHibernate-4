@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Domain.Address">
+    <Position X="11.25" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAgAAACAIAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Benefit">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Benefit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Employee" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Employee">
+    <Position X="11.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAUAAQAAAAAAIgAAAAAAACAAQAAACAAAAggAAAAA=</HashCode>
+      <FileName>Employee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ResidentialAddress" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Leave">
+    <Position X="0.75" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAARAAAAAAAAA=</HashCode>
+      <FileName>Leave.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.SeasonTicketLoan">
+    <Position X="4.25" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAEBAAAA=</HashCode>
+      <FileName>SeasonTicketLoan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.SkillsEnhancementAllowance">
+    <Position X="7.75" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAEAAAA=</HashCode>
+      <FileName>SkillsEnhancementAllowance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Domain.LeaveType">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAACIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LeaveType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
