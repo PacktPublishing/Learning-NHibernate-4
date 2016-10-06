@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+  <class name="Community">
+    <id name="Id" generator="hilo" />
+    <property name="Name" />
+    <property name="Description" />
+    <set name="Members" table="Employee_Community" cascade="all" inverse="true">
+      <key>
+        <column name="Community_Id"/>
+      </key>
+      <many-to-many class="Employee">
+        <column name="Employee_Id" />
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>

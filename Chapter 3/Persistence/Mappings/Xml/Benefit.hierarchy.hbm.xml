@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+  <class name="Benefit">
+    <id name="Id" generator="hilo" />
+    <discriminator column="BenefitType" type="String" />
+    <property name="Name" />
+    <property name="Description" />
+    <many-to-one name="Employee" class="Employee"  column="Employee_Id"/>
+
+    <subclass name="SkillsEnhancementAllowance" discriminator-value="SEA">
+      <property name="RemainingEntitlement" />
+      <property name="Entitlement" />
+    </subclass>
+
+    <subclass name="SeasonTicketLoan" discriminator-value="STL">
+      <property name="Amount" />
+      <property name="MonthlyInstalment" />
+      <property name="StartDate" />
+      <property name="EndDate" />
+    </subclass>
+
+    <subclass name="Leave" discriminator-value="LVE">
+      <property name="Type" />
+      <property name="AvailableEntitlement" />
+      <property name="RemainingEntitlement" />
+    </subclass>
+  </class>
+</hibernate-mapping>

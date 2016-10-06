@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+  <class name="Benefit" abstract="true">
+    <id name="Id" generator="hilo" />
+    <property name="Name" />
+    <property name="Description" />
+    <many-to-one name="Employee" class="Employee" column="Employee_Id"/>
+
+    <union-subclass name="SkillsEnhancementAllowance">
+      <property name="RemainingEntitlement" />
+      <property name="Entitlement" />
+    </union-subclass>
+
+    <union-subclass name="SeasonTicketLoan">
+      <property name="Amount" />
+      <property name="MonthlyInstalment" />
+      <property name="StartDate" />
+      <property name="EndDate" />
+    </union-subclass>
+
+    <union-subclass name="Leave">
+      <property name="Type" />
+      <property name="AvailableEntitlement" />
+      <property name="RemainingEntitlement" />
+    </union-subclass>
+  </class>
+</hibernate-mapping>
