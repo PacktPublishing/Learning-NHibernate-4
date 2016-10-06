@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   schema="EB"
+                   default-cascade="delete-all-orphan"
+                   assembly="Domain"
+                   namespace="Domain"
+                   default-access="property"
+                   default-lazy="true">
+  <class name="Employee"
+         table="employees"
+         mutable="true"
+         schema="EB"
+         lazy="true">
+    <id name="Id" generator="hilo" />
+    <property 
+      name="EmployeeNumber" 
+      column="employment_number"
+      type="System.String"
+      length="10" 
+      not-null="true"
+      unique="true"
+      lazy="false"
+      mutable="true"/>
+    <property name="Firstname" />
+    <property name="Lastname" />
+    <property name="EmailAddress" />
+    <property name="DateOfBirth" />
+    <property name="DateOfJoining" />
+    <property name="IsAdmin" />
+    <property name="Password" />
+    <!--<component name="ResidentialAddress" class="Address">
+      <property name="AddressLine1"/>
+      <property name="AddressLine2" />
+      <property name="Postcode" />
+      <property name="City" />
+      <property name="Country" />
+    </component>-->
+
+    <one-to-one name="ResidentialAddress" class="Address"
+                property-ref="Employee"
+                cascade="all" />
+
+    <set name="Benefits" cascade="all-delete-orphan" inverse="true">
+      <key column="Employee_Id" />
+      <one-to-many class="Benefit"/>
+    </set>
+
+    <set name="Communities"
+         table="Employee_Community"
+         cascade="all">
+      <key>
+        <column name="Employee_Id" />
+      </key>
+      <many-to-many
+        class="Community">
+        <column name="Community_Id" />
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>

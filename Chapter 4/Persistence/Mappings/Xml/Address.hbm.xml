@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+  <class name="Address">
+    <id name="Id" generator="hilo" />
+    <property name="AddressLine1"/>
+    <property name="AddressLine2" />
+    <property name="Postcode" />
+    <property name="City" />
+    <property name="Country" />
+    
+    <many-to-one name="Employee" class="Employee" column="Employee_Id" unique="true" />
+                 
+  </class>
+</hibernate-mapping>

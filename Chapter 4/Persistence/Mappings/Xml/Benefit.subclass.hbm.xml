@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+  <class name="Benefit">
+    <id name="Id" generator="hilo" />
+    <property name="Name" />
+    <property name="Description" />
+    
+    <many-to-one name="Employee" 
+                 class="Employee"  
+                 column="Employee_Id"/>
+
+    <joined-subclass name="SkillsEnhancementAllowance">
+      <key column="Id" />
+      <property name="RemainingEntitlement" />
+      <property name="Entitlement" />
+    </joined-subclass>
+
+    <joined-subclass name="SeasonTicketLoan">
+      <key column="Id"/>    
+      <property name="Amount" />
+      <property name="MonthlyInstalment" />
+      <property name="StartDate" />
+      <property name="EndDate" />
+    </joined-subclass>
+
+    <joined-subclass name="Leave">
+      <key column="Id"/>
+      <property name="Type" />
+      <property name="AvailableEntitlement" />
+      <property name="RemainingEntitlement" />
+    </joined-subclass>
+    
+  </class>
+</hibernate-mapping>
