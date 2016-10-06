@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="Domain" assembly="Domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="SeasonTicketLoan">
+    <id type="Int32" />
+    <property name="Amount" />
+    <property name="MonthlyInstalment" />
+    <property name="StartDate" />
+    <property name="EndDate" />
+  </class>
+  <class name="Employee">
+    <id type="Int32" />
+    <property name="EmployeeNumber" />
+    <property name="Firstname" />
+    <property name="Lastname" />
+    <property name="EmailAddress" />
+    <property name="DateOfBirth" />
+    <property name="DateOfJoining" />
+    <property name="IsAdmin" />
+    <list name="Leaves">
+      <key column="Employee_Id" />
+      <list-index />
+      <element type="Domain.Leave, Domain" />
+    </list>
+  </class>
+  <class name="Benefit">
+    <id type="Int32" />
+    <property name="Name" />
+    <property name="Description" />
+  </class>
+  <class name="Address">
+    <id type="Int32" />
+    <property name="AddressLine1" />
+    <property name="AddressLine2" />
+    <property name="Postcode" />
+    <property name="City" />
+    <property name="Country" />
+  </class>
+</hibernate-mapping>

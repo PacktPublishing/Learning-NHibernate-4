@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8561D69B-FF9E-4951-91A4-DD69D18D455C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Persistence</RootNamespace>
+    <AssemblyName>Persistence</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.2.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mappings\ByCode\AddressMappings.cs" />
+    <Compile Include="Mappings\ByCode\CommunityMappings.cs" />
+    <Compile Include="Mappings\ByCode\CompleteEmployeeMappings.cs" />
+    <Compile Include="Mappings\ByCode\Component\EmployeeMappings.cs" />
+    <Compile Include="Mappings\ByCode\EmployeeMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPC\BenefitMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPC\LeaveMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPC\SeasonTicketLoanMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPC\SkillsEnhancementAllowanceMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPH\BenefitMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPH\LeaveMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPH\SeasonTicketLoanMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPH\SkillsEnhancementAllowance.cs" />
+    <Compile Include="Mappings\ByCode\TPT\BenefitMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPT\LeaveMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPT\SeasonTicketLoanMappings.cs" />
+    <Compile Include="Mappings\ByCode\TPT\SkillsEnhancementAllowance.cs" />
+    <Compile Include="Mappings\Fluent\AddressMappings.cs" />
+    <Compile Include="Mappings\Fluent\CommunityMappings.cs" />
+    <Compile Include="Mappings\Fluent\Component\EmployeeMappings.cs" />
+    <Compile Include="Mappings\Fluent\EmployeeMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPC\BenefitMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPC\LeaveMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPC\SeasonTicketLoanMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPC\SkillsEnhancementAllowanceMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPH\BenefitMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPH\LeaveMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPH\SeasonTicketLoanMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPH\SkillsEnhancementAllowanceMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPT\BenefitMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPT\LeaveMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPT\SeasonTicketLoanMappings.cs" />
+    <Compile Include="Mappings\Fluent\TPT\SkillsEnhancementAllowanceMappings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{657ba076-4f98-4247-8db4-95f38739e562}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Employee.address.component.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Employee.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Benefit.concrete.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Benefit.subclass.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Benefit.hierarchy.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Community.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Address.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Xml\Employee.full.hbm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
