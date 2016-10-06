@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   schema="EB"
+                   default-cascade="all-delete-orphan"
+                   assembly="Chapter10"
+                   namespace="Chapter10.CompositeKey.Entities"
+                   default-access="property"
+                   default-lazy="true">
+  <class name="Employee">
+    <composite-id name="Id" class="EmployeeId">
+      <key-property name="Firstname" />
+      <key-property name="Lastname" />
+    </composite-id>
+    <property name="DateOfJoining" />
+    
+    <set name="Benefits" cascade="all-delete-orphan" inverse="true">
+      <key>
+        <column name="Firstname" />
+        <column name="Lastname"/>
+      </key>
+      <one-to-many class="Benefit"/>
+    </set>
+  </class>
+</hibernate-mapping>

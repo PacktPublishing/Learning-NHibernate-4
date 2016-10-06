@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Chapter10" namespace="Chapter10.CompositeKey.Entities">
+  <class name="Benefit">
+    <id name="Id" generator="hilo" />
+    
+    <many-to-one name="Employee" class="Employee" >
+      <column name="Firstname" />
+      <column name="Lastname" />
+    </many-to-one>
+    
+  </class>
+</hibernate-mapping>
